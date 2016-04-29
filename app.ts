@@ -4,15 +4,25 @@ import { bootstrap } from "angular2/platform/browser";
 import { Component } from "angular2/core";
 
 @Component({
-  selector: 'hello-world',
-  template: `<div>Hello {{ name }}</div>`
-})
-class HelloWorld {
-  name: string;
+  selector: 'reddit',
+  template: `
+    <form class="ui large form segment">
+      <h3 class="ui header">Add a Link</h3>
 
+      <div class="field">
+        <label for="title">Title:</label>
+        <input name="title" />
+      </div>
+      <div>
+        <label for="link">Link:</label>
+        <input name="link" />
+      </div>
+    </form>
+  `
+})
+class RedditApp {
   constructor() {
-    this.name = 'Felipe';
   }
 }
 
-bootstrap(HelloWorld);
+bootstrap(RedditApp);
