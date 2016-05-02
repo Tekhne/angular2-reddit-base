@@ -25,6 +25,7 @@ class Article {
 
 @Component({
   selector: 'reddit-article',
+  inputs: ['article'],
   host: {
     class: 'row'
   },
@@ -62,10 +63,6 @@ class Article {
 })
 class ArticleComponent {
   article: Article;
-
-  constructor() {
-    this.article = new Article('Angular 2', 'http://angular.io', 10);
-  }
 
   voteUp(): boolean {
     this.article.voteUp();
