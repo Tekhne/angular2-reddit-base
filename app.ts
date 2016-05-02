@@ -99,7 +99,7 @@ class ArticleComponent {
     </form>
 
     <div class="ui grid posts">
-      <reddit-article>
+      <reddit-article *ngFor="#article of articles" [article]="article">
       </reddit-article>
     </div>
   `
