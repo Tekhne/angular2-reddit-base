@@ -14,6 +14,15 @@ class Article {
     this.votes = votes || 0;
   }
 
+  domain(): string {
+    try {
+      const link: string = this.link.split('//')[1];
+      return link.split('/')[0];
+    } catch (err) {
+      return null;
+    }
+  }
+
   voteUp(): void {
     this.votes += 1;
   }
@@ -44,6 +53,7 @@ class Article {
       <a class="ui large header" href="{{ article.link }}">
         {{ article.title }}
       </a>
+      <div class="meta">({{ article.domain() }})</div>
       <ul class="ui big horizaontal list voters">
         <li class="item">
           <a href (click)="voteUp()">
